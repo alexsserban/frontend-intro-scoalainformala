@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <br>
+        <form>
+            <fieldset>
+                <legend>Academic information</legend>
+                <label for="degree">Degree</label>
+                <select name="degree" id="degree">
+                    <option value="BA"> Bachelor of Art</option>
+                    <option value="BS"> Bachelor of Science</option>
+                    <option value="MBA" selected="selected"> Master of Business Administrator</option>
+                </select>
+                <br>
+                <label for="studentid">Student ID</label>       
+                <input type="text"/>
+                <br>
+                <label for="classes">Classes Attended</label> 
+                <select multiple>
+                    <option>Geography</option>
+                    <option>Mathematics</option>
+                    <option>English</option>
+                </select>
+            </fieldset>
+            <fieldset><legend>Personal Details</legend>
+                <label for="firstname">First Name</label>        
+                <input type="text"/>
+                <br>  
+                <label for="lastname">Last Name</label> 
+                <input type="text"/>  
+                <br>
+                <label for="gender">Gender</label> 
+                <input type="radio" name="gender" /><label>Male</label>
+                <input type="radio" name="gender" checked="checked"/><label>Female</label>
+                <br>
+                Email      
+                <input type="text"/>
+            </fieldset>
+        </form> 
+        <br>
+        <textarea rows="6" cols="50"> TERMS AND CONDITIONS </textarea>
+        <br><br>
+        <button type="button">Send Form</button>
+        <button type="button">Clear Form</button>
+    </body>
+</html>
