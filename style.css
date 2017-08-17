@@ -1,0 +1,39 @@
+#top{
+    background-color: #F0F0F0;
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #D0D0D0;
+    padding: 5px;
+}
+#left{
+    float: left;
+    width: 10px;
+}
+
+#middle{
+    margin: 0 5px 5px 300px;
+    pading: 5px;
+}
+
+#bottom{
+    padding: 5px;
+    margin: 0 5px 0 170px;
+    border-top: 1px #AAAAAA solid;
+    font-size: 10px;
+}
+h1{
+    font-size: 48px;
+    margin:10px;
+}
+
+img{
+    width:150px;
+    float:left;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+
