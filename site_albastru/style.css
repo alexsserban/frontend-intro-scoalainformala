@@ -1,0 +1,63 @@
+body {
+
+    background-color: navy;
+}
+
+#container {
+    width:80%;
+    margin: auto;
+}
+
+#top{
+    background-color: blue;
+    border-radius: 25px 25px 0px 0px;
+    height: 140px;
+}
+
+#mid{
+    background-color: white;
+    height: 600px;
+    padding: 0px;
+}
+
+#vertical{
+    margin-top:20px;
+    float: left;
+    width: 200px;
+}
+
+#vertical-text{
+    padding: 0px 20px 20px 20px;
+    font-size: 12px;
+}
+
+#content{
+ padding: 0 20px;
+}
+
+#pc-image{
+    margin: 20px;
+    float: left;
+}
+
+#page-title{
+    color: white;
+    margin-top: 30px;
+    font-size: 70px;
+}
+
+h2{ maring: 0px;}
+
+a {
+    display: block;
+    color: black;
+    padding-left: 20px;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #D0D0D0;
+    text-decoration:none;
+}
+
+div {
+    overflow: hidden;
+}
