@@ -1,16 +1,25 @@
 body {
 
-    background-color: yellowgreen;
+    background-color: #E0D48A;
 }
 
 #container {
     width:80%;
-    margin: auto;
+    margin: 20px auto;
 }
 
 #top{
-    background-color: yellow;
-    height: 170px;
+    background-color: #BDD92D;
+    height: 200px;
+}
+
+#page-title{
+    color: black;
+    margin-left: 70%;
+}
+
+#title-text{
+    margin: 50px 0px -15px 0px;
 }
 
 #menu-container{
@@ -24,10 +33,20 @@ body {
     border-bottom: none;
 }
 
+.menu-items {
+    padding-left: 85px;
+    text-decoration:none;
+}
+
 #mid{
     background-color: white;
     height: 500px;
-    padding: 0px;
+}
+
+#vertical{
+    border-right: 1px solid #b8babc;
+    float: left;
+    width: 250px;
 }
 
 #vertical-text{
@@ -35,15 +54,25 @@ body {
     font-size: 13px;
 }
 
-#vertical{
-    border-right: 1px solid #b8babc;
-    margin-top:0px;
-    float: left;
-    width: 250px;
+.bg-menu{
+    margin: 10px;
+    padding: 10px 0px 10px 20px;
+    background: #D2D35E;
+    font-size: 25px;
+}
+
+.readmore{
+    border: 1px solid black;
+    border-left: none;
+    width: 150px;
+}
+
+.vertical-items{
+    padding:2px;
 }
 
 #content{
- padding: 0 20px;
+    padding: 0 20px;
 }
 
 #content-left{
@@ -57,30 +86,14 @@ body {
     padding-left: 20px;
 }
 
-#page-title{
-    color: black;
-    margin-left: 70%;
+.read-more{
+     text-decoration: none;
 }
 
-.bg-menu{
+#footer-text{
+    padding: 15px;
+    font-size: 14px;
     text-align: center;
-    margin: 10px;
-    padding: 5px;
-    background: yellow;
-}
-.bg-menu2{
-    
-    width: 150px;
-    margin-top: 20px;
-    padding: 5px;
-    background: yellow;
-}
-
-a {
-    display: inline;
-    color: black;
-    padding-left:85px;
-    text-decoration:none;
 }
 
 div {
