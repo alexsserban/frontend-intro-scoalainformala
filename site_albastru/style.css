@@ -1,23 +1,21 @@
 body {
-
-    background-color: navy;
+    background-color: #222244;
 }
 
 #container {
     width:80%;
-    margin: auto;
+    margin: 20px auto;
 }
 
 #top{
-    background-color: blue;
+    background-color: #444466;
     border-radius: 25px 25px 0px 0px;
     height: 140px;
 }
 
 #mid{
     background-color: white;
-    height: 600px;
-    padding: 0px;
+    height: 400px;
 }
 
 #vertical{
@@ -32,10 +30,17 @@ body {
 }
 
 #content{
- padding: 0 20px;
+    padding: 20px;
+}
+
+#bot{
+    background-color: #664444;
+    border-radius: 0px 0px 25px 25px;
+    padding: 5px; 
 }
 
 #pc-image{
+    width: 150px; 
     margin: 20px;
     float: left;
 }
@@ -46,15 +51,18 @@ body {
     font-size: 70px;
 }
 
-h2{ maring: 0px;}
+#footer-text{
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}
 
 a {
     display: block;
     color: black;
-    padding-left: 20px;
-    padding-bottom: 7px;
+    padding: 0px 0px 7px 20px;
     margin-bottom: 10px;
-    border-bottom: 2px solid #D0D0D0;
+    border-bottom: 1px dotted #D0D0D0;
     text-decoration:none;
 }
 
