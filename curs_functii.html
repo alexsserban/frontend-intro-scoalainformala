@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script>
+            var a = 5;
+            var b = 6.1 + a;
+            var test = 10;
+            var anaAreMere = "Ana are mere";
+            var arr = [9, 5, 100];
+            var aRR = 100;
+            var rez = a + b;
+            var apartament ={
+                "nrCamere": 4,
+                "suprafata": 80,
+                "etaj": 4,
+                "adresa": "str basmului",
+            }
+            console.log(apartament);
+            console.log(apartament["etaj"]);
+
+            function sum(){
+                return arguments[0] + arguments[1] + arguments[2];
+            }
+            var c = sum(3,4,5);
+            console.log(c);
+
+            function sum(){
+                var x = 0;
+                for(var i = 0; i < arguments.length; i++){
+                    x = x + arguments[i];
+                }
+                return x;
+            }
+
+            var caine = [];
+            caine[0]={};
+            caine[0].rasa = "laa";
+            console.log(caine);
+            console.log(sum(3,4,5));
+
+            
+        </script>
+    </head>
+</html>
