@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -8,14 +8,14 @@
 <body>
 
     <form id="my-form">
-        <input name="firstName" type="text" placeholder="First Name" onkeydown="keyDown(event,this);" 
-            onkeyup="keyUp();" onkeypress="keyPress();" onchange="change();"oninput="input();" oninput="input();"/> 
+        <input name="firstName" type="text" placeholder="First Name" onkeydown="keyDown(event,this);"
+            onkeyup="keyUp();" onkeypress="keyPress();" onchange="change();"oninput="input();" oninput="input();"/>
         <input name="lastName" type="text"  placeholder="Last Name" oninput="input();" /> <br />
         <p id="numele"></p>
         <input name="x" type="text" placeholder="X" oninput="rezultat();" />
         <input name="y" type="text" placeholder="Y" oninput="rezultat();" /> <br />
         <p id="rezultat"></p>
-        Age: 
+        Age:
         <select name="age">
             <option value="0-7">0-7</option>
             <option value="8-14">8-14</option>
@@ -63,10 +63,10 @@
         }
         function rezultat(){
             if (x.value && y.value){
-                document.getElementById("rezultat").innerHTML = parseInt(x.value) + parseInt(y.value); 
+                document.getElementById("rezultat").innerHTML = parseInt(x.value) + parseInt(y.value);
             }
             if (!x.value || !y.value){
-                document.getElementById("rezultat").innerHTML = ""; 
+                document.getElementById("rezultat").innerHTML = "";
             }
         }
         document.getElementById("titlu1").innerHTML="text <br> nou";
@@ -84,10 +84,10 @@
         document.querySelector(".fancy").style.color="blue";
 
         function changeColor(){
-            document.getElementById("test").style.color="red";  
+            document.getElementById("test").style.color="red";
         }
         function changeColor2(){
-            document.getElementById("test").style.color="blue";  
+            document.getElementById("test").style.color="blue";
         }
     </script>
 </body>
