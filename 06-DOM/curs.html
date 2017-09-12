@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <form id="my-form">
+    <input name="firstName" type="text" placeholder="First Name" onkeydown="keyDown(event,this);" onkeyup="keyUp();" onkeypress="keyPress();" onchange="change();" oninput="input();" oninput="input();" />
+    <input name="lastName" type="text" placeholder="Last Name" oninput="input();" /> <br />
+    <p id="numele"></p>
+    <input name="x" type="text" placeholder="X" oninput="rezultat();" />
+    <input name="y" type="text" placeholder="Y" oninput="rezultat();" /> <br />
+    <p id="rezultat"></p>
+    Age:
+    <select name="age">
+            <option value="0-7">0-7</option>
+            <option value="8-14">8-14</option>
+            <option value="15-18">15-18</option>
+            <option value="19-12">19-12</option>
+            <option value="22-40">22-40</option>
+        </select> <br /> Check me out: <input type="checkbox" value="test" /> <br /> Favorite band: <br />
+    <input type="radio" value="Metalica" name="favoriteBand" /> Metalica <br />
+    <input type="radio" value="Salam" name="favoriteBand" /> Salam <br />
+    <input type="radio" value="xxxxx" name="favoriteBand" /> xxxxx <br />
+    <input type="radio" value="yyyyy" name="favoriteBand" /> yyyyy <br />
+
+  </form>
+  <p id="titlu1">text text text</p>
+  <p id="titlu2">text text text</p>
+  <div class="fancy">text1</div>
+  <div class="fancy">text2</div>
+  <p onmouseover="changeColor();" onmouseout="changeColor2();" id="test">Textul meu</p>
+
+
+  <script>
+    var firstName = document.querySelector("#my-form [name='firstName']");
+    var lastName = document.querySelector("#my-form [name='lastName']");
+    var x = document.querySelector("#my-form [name='x']");
+    var y = document.querySelector("#my-form [name='y']");
+
+    function keyDown(event, elem) {
+      if (event.key >= '0' && event.key <= '9') event.preventDefault();
+    }
+
+    function keyUp() {
+      console.log('keyUp', firstName.value);
+    }
+
+    function keyPress() {
+      console.log('keyPress', firstName.value);
+    }
+
+    function change() {
+      console.log('change', firstName.value);
+    }
+
+    function input() {
+      document.getElementById('numele').innerHTML = 'Salut ' + firstName.value + ' ' + lastName.value;
+      console.log('input', firstName.value);
+    }
+
+    function rezultat() {
+      if (x.value && y.value) {
+        document.getElementById('rezultat').innerHTML = parseInt(x.value) + parseInt(y.value);
+      }
+
+      if (!x.value || !y.value) {
+        document.getElementById('rezultat').innerHTML = '';
+      }
+    }
+
+    document.getElementById('titlu1').innerHTML = 'text <br> nou';
+    document.getElementById('titlu2').innerText = 'text <br> nou';
+
+    divurileMeleFancy = document.getElementsByClassName('fancy');
+    for (var i = 0; i < divurileMeleFancy.length; i++) {
+      divurileMeleFancy[i].innerHTML = divurileMeleFancy[i].innerHTML + 'A MERS';
+    }
+
+    document.getElementById('titlu2').style.color = 'red';
+
+    // document.getElementById("img1").getAttribute("SRC");
+    // document.getElementById("img1").setAttribute("SRC", "");
+
+    document.querySelector('.fancy').style.color = 'blue';
+
+    function changeColor() {
+      document.getElementById('test').style.color = 'red';
+    }
+
+    function changeColor2() {
+      document.getElementById('test').style.color = 'blue';
+    }
+  </script>
+</body>
+
+</html>
