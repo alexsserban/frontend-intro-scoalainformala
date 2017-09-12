@@ -5,7 +5,8 @@ body {
 
 #container {
     width:80%;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 #top{
@@ -15,14 +16,14 @@ body {
 
 #page-title{
     color: black;
-    margin-left: 70%;
+    margin-left:70%;
 }
 
 #title-text{
     margin: 50px 0px -15px 0px;
 }
 
-#menu-container{
+.menu-container{
     padding: 10px;
     background: white;
 }

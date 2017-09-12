@@ -1,149 +1,163 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script>
-            function f1(a){
-                // Calculeaza factorialul unui numar
-                var b = 1;
-                for (var i = 2; i <= a; i++){
-                    b *= i;
-                }
-                return b;
-            }
 
-            function f2(a, b){
-                // Calculeaza cel mai mare divizor comun al 2 numere
-                while(a != b){
-                    if (a > b) a -= b;
-                     else b -= a;
-                }
-                return a;
-            }
-            
-            function f3(a, b){
-                // Calculeaza cel mai mic multiplu comun al 2 numere
-                return (a * b) / f2(a, b);
-            }
+<head>
+  <title>Tema</title>
+  <script>
+    // Calculeaza factorialul unui numar
+    function f1(a) {
+      var b = 1;
+      for (var i = 2; i <= a; i++) {
+        b *= i;
+      }
 
-            function f4(a){
-                /* Returneaza un array care sa contina toti divizorii unui numar. 
-                Ex pentru 64: trebuie sa returneze [2,4,8,16,32] */
-                var b = [];
-                var j = 0;
-                for (var i = 2; i <= a / 2; i++){
-                    if (a % i == 0) {
-                        b[j] = i;
-                        j++;
-                    }
-                }
-                return b; 
-            }
+      return b;
+    }
 
-            function f5(a){
-                /* Returneaza un array care sa contina toti divizorii primi a unui numar. 
-                Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2] */
-                var b = [];
-                var j = 0;
-                for (var i = 2; i <= Math.sqrt(a); i++){
-                    while (a % i == 0){
-                        b[j] = i;
-                        j++;
-                        a /= i;
-                    }
-                }
-                return b;
-            }
+    // Calculeaza cel mai mare divizor comun al 2 numere
+    function f2(a, b) {
+      while (a != b) {
+        if (a > b) a -= b;
+        else b -= a;
+      }
 
-            function f6(a){
-                /* Returneaza un array care sa contina toti divizorii unici primi a unui numar: 
-                Ex pentru 64: trebuie sa returneze [2] */
-                var b = [];
-                var j = 0;
-                for (var i = 2; i <= Math.sqrt(a); i++){
-                    if (a % i == 0){
-                        b[j] = i;
-                        j++;
-                        a /= i;
-                    }
-                    while (a % i == 0){
-                        a /= i;
-                    }
-                }
-                return b;
-            }
+      return a;
+    }
 
-            function f7(a){
-                // Transforma din Miles/Galon in Litri/100KM
-                return 282.48 / a;
-            }
+    // Calculeaza cel mai mic multiplu comun al 2 numere
+    function f3(a, b) {
+      return (a * b) / f2(a, b);
+    }
 
-            function f8(a){
-                // Transforma din Celsius in Fahrenheit
-                return a * 9 / 5 + 32;
-            }
+    /* Returneaza un array care sa contina toti divizorii unui numar.
+    Ex pentru 64: trebuie sa returneze [2,4,8,16,32] */
+    function f4(a) {
+      var b = [];
+      var j = 0;
+      for (var i = 2; i <= a / 2; i++) {
+        if (a % i == 0) {
+          b[j] = i;
+          j++;
+        }
+      }
 
-            function f9(a){
-                // Transforma din Grade in Radiani
-                var pi = 3.14159265359;
-                return a * pi / 180 ;
-            }
+      return b;
+    }
 
-            function f10(a){
-                // Returneaza suplementul unui unghi (suma unghiurilor este 180)
-                return 180 - a;
-            }
+    /* Returneaza un array care sa contina toti divizorii primi a unui numar.
+    Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2] */
+    function f5(a) {
+      var b = [];
+      var j = 0;
+      for (var i = 2; i <= Math.sqrt(a); i++) {
+        while (a % i == 0) {
+          b[j] = i;
+          j++;
+          a /= i;
+        }
+      }
 
-            function f11(a){
-                // Returneaza complementul unui unghi (suma unghiurilor este 90)
-                return 90 - a;
-            }
+      return b;
+    }
 
-            function f12(a, b){
-                // Care primeste 2 arrayuri ca parametriu si returneaza un singur array cu toate elementele
-                for (var i = 0; i < b.length; i++){
-                    a.push(b[i]);
-                }
-                return a;
-            }
+    /* Returneaza un array care sa contina toti divizorii unici primi a unui numar:
+    Ex pentru 64: trebuie sa returneze [2] */
+    function f6(a) {
 
-            function f13(a){
-                // Care returneaza un String in ordine inversa. Ex: pentru ABC returneaza CBA
-                var b = "";
-                for (var i = a.length - 1; i >= 0 ; i--){
-                    b += a[i];
-                }
-                return b;
-            }
+      var b = [];
+      var j = 0;
+      for (var i = 2; i <= Math.sqrt(a); i++) {
+        if (a % i == 0) {
+          b[j] = i;
+          j++;
+          a /= i;
+        }
 
-            function f14(a){
-                /* Care verifica daca un numar este palindrom 
-                (se scrie la fel si de la sfarsit la inceput si de la inceput la sfarsit. Ex: ASDDSA) */
-                j = a.length-1;
-                for (var i = 0; i < ((a.length-1) / 2); i++){
-                    if (a[i] != a[j]) return 0;
-                    j--;
-                }
-                return 1;
-            }
+        while (a % i == 0) {
+          a /= i;
+        }
+      }
 
-            console.log("F1: ", f1(5));
-            console.log("F2: ", f2(8,24));
-            console.log("F3: ", f3(8,12));
-            console.log("F4: ", f4(64));
-            console.log("F5: ", f5(64));
-            console.log("F6: ", f6(64));
-            console.log("F7: ", f7(24));
-            console.log("F8: ", f8(20));
-            console.log("F9: ", f9(57.296));
-            console.log("F10: ", f10(50));
-            console.log("F11: ", f11(50));
-            console.log("F12: ", f12([1, 2, 3], [4, 5, 6]));
-            console.log("F13: ", f13("ABC"));
-            console.log("F14: ", f14("3443"));
-        </script>
-    </head>
-    <body>
-    </body>
+      return b;
+    }
+
+    // Transforma din Miles/Galon in Litri/100KM
+    function f7(a) {
+      return 282.48 / a;
+    }
+
+    // Transforma din Celsius in Fahrenheit
+    function f8(a) {
+      return a * 9 / 5 + 32;
+    }
+
+    // Transforma din Grade in Radiani
+    function f9(a) {
+      var pi = 3.14159265359;
+      return a * pi / 180;
+    }
+
+    // Returneaza suplementul unui unghi (suma unghiurilor este 180)
+    function f10(a) {
+      return 180 - a;
+    }
+
+    // Returneaza complementul unui unghi (suma unghiurilor este 90)
+    function f11(a) {
+      return 90 - a;
+    }
+
+    /* Care primeste 2 arrayuri ca parametriu si returneaza un singur array cu
+    toate elementele */
+    function f12(a, b) {
+      for (var i = 0; i < b.length; i++) {
+        a.push(b[i]);
+      }
+
+      return a;
+    }
+
+    // Care returneaza un String in ordine inversa. Ex: pentru ABC returneaza CBA
+    function f13(a) {
+      var b = '';
+      for (var i = a.length - 1; i >= 0; i--) {
+        b += a[i];
+      }
+
+      return b;
+    }
+
+    /* Care verifica daca un numar este palindrom
+    (se scrie la fel si de la sfarsit la inceput si de la inceput la sfarsit.
+    Ex: ASDDSA) */
+    function f14(a) {
+      j = a.length - 1;
+      for (var i = 0; i < ((a.length - 1) / 2); i++) {
+        if (a[i] != a[j]) return 0;
+        j--;
+      }
+
+      return 1;
+    }
+
+    console.log('F1: ', f1(5));
+    console.log('F2: ', f2(8, 24));
+    console.log('F3: ', f3(8, 12));
+    console.log('F4: ', f4(64));
+    console.log('F5: ', f5(64));
+    console.log('F6: ', f6(64));
+    console.log('F7: ', f7(24));
+    console.log('F8: ', f8(20));
+    console.log('F9: ', f9(57.296));
+    console.log('F10: ', f10(50));
+    console.log('F11: ', f11(50));
+    console.log('F12: ', f12([1, 2, 3], [4, 5, 6]));
+    console.log('F13: ', f13('ABC'));
+    console.log('F14: ', f14('3443'));
+  </script>
+</head>
+
+<body>
+</body>
+
 </html>
-
-
