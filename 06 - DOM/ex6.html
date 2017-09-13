@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ex6</title>
+</head>
+
+<body>
+  <p>Plecand de la ex 5, limitati numarul de caractere la 10. In momentul in care am ajuns la 10, inrositi counterul si folosind event.preventDefault() pe evenimentul onkeypress opriti utilizatorul sa mai introduca caractere in plus.</p>
+  <form id="my-form">
+    <div style="width:150px;">
+      <input name="input1" type="text" oninput="input()" onkeypress="press(event)" style="width:100%;">
+      <p id="counter" style="text-align:right; margin:0;"></p>
+    </div>
+    <br>
+    <select name="Select1">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select>
+    <select name="Select2">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select> <br>
+    <br> Check1: <input type="checkbox">
+    <br> Check2: <input type="checkbox">
+    <br> Check3: <input type="checkbox">
+    <br> <br>
+    <input type="submit">
+
+  </form>
+
+  <script>
+    var x = document.querySelector("#my-form [name='input1']");
+    var y = document.getElementById('counter');
+
+    function input() {
+      y.innerHTML = String(x.value).length;
+      if (y.innerHTML == 10) {
+        y.style.color = 'red';
+      } else if (y.innerHTML < 10) {
+        y.style.color = '';
+      }
+    }
+
+    function press(event) {
+      if (y.innerHTML == 10) event.preventDefault();
+    }
+
+  </script>
+</body>
+
+</html>
