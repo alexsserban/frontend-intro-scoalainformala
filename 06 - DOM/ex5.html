@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ex5</title>
+</head>
+
+<body>
+  <p>Pastrati doar 1 input si afisati intr-un span/div in coltul dreapta jos, lungimea sirului de caractere tastat.</p>
+  <form id="my-form">
+    <div style="width:150px;">
+      <input name="input1" type="text" oninput="input()" style="width:100%;">
+      <p id="counter" style="text-align:right; margin:0;"></p>
+    </div>
+    <br>
+    <select name="Select1">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select>
+    <select name="Select2">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select> <br>
+    <br> Check1: <input type="checkbox">
+    <br> Check2: <input type="checkbox">
+    <br> Check3: <input type="checkbox">
+    <br> <br>
+    <input type="submit">
+
+  </form>
+
+  <script>
+    var x = document.querySelector("#my-form [name='input1']");
+    function input() {
+      document.getElementById('counter').innerHTML = String(x.value).length;
+    }
+
+  </script>
+</body>
+
+</html>

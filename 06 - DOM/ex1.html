@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ex1</title>
+</head>
+
+<body>
+  <p>Pastrati doar 2 inputuri si colorati ambele inputuri verzi daca valoarea din casuta 1 si din casuta 2 sunt egale;</p>
+  <form id="my-form">
+    <input name="input1" type="text" oninput="input()">
+    <input name="input2" type="text" oninput="input()">
+    <br> <br>
+    <select name="Select1">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select>
+    <select name="Select2">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select> <br>
+    <br> Check1: <input type="checkbox">
+    <br> Check2: <input type="checkbox">
+    <br> Check3: <input type="checkbox">
+    <br> <br>
+    <input type="submit">
+  </form>
+
+  <script>
+    function equal(a, b) {
+      if (a === b) return 1;
+      return 0;
+    }
+
+    var x = document.querySelector("#my-form [name='input1']");
+    var y = document.querySelector("#my-form [name='input2']");
+
+    function input() {
+      if (equal(x.value, y.value)) {
+        x.style.backgroundColor = 'green';
+        y.style.backgroundColor = 'green';
+      } else {
+        x.style.backgroundColor = '';
+        y.style.backgroundColor = '';
+      }
+    }
+  </script>
+</body>
+
+</html>

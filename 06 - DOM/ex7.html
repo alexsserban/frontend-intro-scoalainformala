@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ex7</title>
+</head>
+
+<body>
+  <p>Pastrati doar 1 input si folosind event.preventDefault pe evenimentul onkeypress, opriti utilizatorul sa mai introduca orice altceva decat numere. (tip: puteti sa gasiti caracterul tastat in event.key).</p>
+  <form id="my-form">
+    <input name="input1" type="text" onkeypress="keypress(event)">
+    <p id="only-numbers" style="color:red; margin:0;"></p>
+    <br> <br>
+    <select name="Select1">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select>
+    <select name="Select2">
+      <option value="Option1">Option1</option>
+      <option value="Option1">Option2</option>
+      <option value="Option1">Option3</option>
+      <option value="Option1">Option4</option>
+    </select> <br>
+    <br> Check1: <input type="checkbox">
+    <br> Check2: <input type="checkbox">
+    <br> Check3: <input type="checkbox">
+    <br> <br>
+    <input type="submit">
+
+  </form>
+
+  <script>
+    function keypress(event) {
+      if (!(event.key >= '0' && event.key <= '9')) {
+        event.preventDefault();
+        document.getElementById('only-numbers').innerHTML = 'Introduceti doar cifre.';
+      } else {
+        document.getElementById('only-numbers').innerHTML = '';
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ex8</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 1" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 2" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 3" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+    </tr>
+    <tr>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 4" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 5" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 6" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+    </tr>
+    <tr>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 7" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 8" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+      <td><img src="http://via.placeholder.com/300x300" alt="Image 9" onmouseover="hover(this)" onmouseout="unhover(this)"></td>
+    </tr>
+  </table>
+  <script>
+    function hover(elem) {
+      elem.src = 'https://placeimg.com/300/300/animals';
+    }
+
+    function unhover(elem) {
+      elem.src = 'http://via.placeholder.com/300x300';
+    }
+  </script>
+</body>
+
+</html>
