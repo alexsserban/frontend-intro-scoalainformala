@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cursul 7</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="button" onclick="displayAsc(gradesArray)">Sort Asc</a>
+  <a class="button" onclick="displayDesc(gradesArray)">Sort Desc</a>
+
+  <p>Note</p>
+  <div id="grades"></div>
+  <br> <br>
+  <form id="my-form">
+    <label name="nume">Nume:</label>
+    <input id="name" type="text">
+    <label name="nume">Note:</label>
+    <input id="nota1" type="number" min="1" max="10">
+    <input id="nota2" type="number" min="1" max="10">
+    <input id="nota3" type="number" min="1" max="10">
+    <input id="nota4" type="number" min="1" max="10">
+    <input id="nota5" type="number" min="1" max="10">
+    <a class="button" onclick="parseGrade()">Submit</a>
+
+  </form>
+
+  <script src="curs.js"></script>
+</body>
+
+</html>
