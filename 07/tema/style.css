@@ -1,0 +1,36 @@
+body{
+  margin: 0;
+  display: flex;
+}
+
+#lista_elevi_wrapper{
+  padding: 20px;
+  width: 100%;
+  background: green;
+}
+
+.note_elev_wrapper{
+  display: none;
+  background: blue;
+}
+
+.add{
+  padding: 5px;
+  background: orange;
+}
+
+#no-name{
+  font-size: 20px;
+}
+
+.studentRow{
+  display: flex;
+}
+
+.column{
+  width: 33.33%;
+}
+
+#studentFirstRow{
+  font-weight: bold;
+}
