@@ -85,3 +85,12 @@ function keypress(event) {
     addStudent();
   }
 }
+
+/*
+<div id="foo1"></div>
+<div id="foo2"></div>
+<div id="foo3"></div>
+
+document.getElementById('foo2').nextSibling; // #foo3
+document.getElementById('foo2').previousSibling; // #foo1
+*/
