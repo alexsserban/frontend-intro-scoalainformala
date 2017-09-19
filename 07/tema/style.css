@@ -9,9 +9,11 @@ body{
   background: green;
 }
 
-.note_elev_wrapper{
+#note_elev_wrapper{
+  padding: 20px;
   display: none;
-  background: blue;
+  background: deepskyblue;
+  width: 50%;
 }
 
 .add{
@@ -31,6 +33,10 @@ body{
   width: 33.33%;
 }
 
-#studentFirstRow{
+#first-row{
   font-weight: bold;
+}
+
+#grades{
+  text-align: center;
 }
