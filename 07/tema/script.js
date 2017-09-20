@@ -21,8 +21,7 @@ function addStudent() {
       document.getElementById('noStudents').style.display = 'none';
     }
 
-    var studentRow = newStudentRow(i, studentName, '', 'Vezi Notele');
-    document.getElementById('lista_elevi_wrapper').innerHTML += studentRow;
+    addStudentRow(i, studentName);
     students[i] = {};
     students[i].name = studentName;
     students[i].average = 0;
@@ -37,6 +36,11 @@ function newStudentRow(id, studentName, average, button) {
   studentRow = studentRow.replace('%id%', id);
   studentRow = studentRow.replace('%id%', id);
   return studentRow;
+}
+
+function addStudentRow(i, studentName) {
+  var studentRow = newStudentRow(i, studentName, '', 'Vezi Notele');
+  document.getElementById('lista_elevi_wrapper').innerHTML += studentRow;
 }
 
 function showStudentGrades(index) {
@@ -84,6 +88,46 @@ function keypress(event) {
   if (event.keyCode == 13) {
     addStudent();
   }
+}
+
+function SortAscGrades() {
+  sortAsc(students);
+}
+
+function SortDescGrades() {
+  sortDesc(students);
+}
+
+//Ordonare Crescatoare BubbleSort
+function sortAsc(students) {
+  var aux;
+  for (i = 1; i < students.length; i++) {
+    for (j = 0; j < students.length - i; j++) {
+      if (students[j].average > students[j + 1].average) {
+        aux = students[j];
+        students[j] = students[j + 1];
+        students[j + 1] = aux;
+      }
+    }
+  }
+
+  return students;
+}
+
+//Ordonare Descrescatoare BubbleSort
+function sortDesc(students) {
+  var aux;
+  for (i = 1; i < students.length; i++) {
+    for (j = 0; j < students.length - i; j++) {
+      if (students[j].average < students[j + 1].average) {
+        aux = students[j];
+        students[j] = students[j + 1];
+        students[j + 1] = aux;
+      }
+    }
+  }
+
+  return students;
 }
 
 /*

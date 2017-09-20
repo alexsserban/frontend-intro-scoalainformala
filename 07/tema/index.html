@@ -16,10 +16,10 @@
       <a class="add" onclick="addStudent()">Adauga Elev</a>
     </form>
     <p id="invalidName"></p>
-    <a class="add">Sorteaza ascendent dupa medie</a>
-    <a class="add">Sorteaza descendent dupa medie</a>
+    <a class="add" onclick="SortAscGrades()">Sorteaza ascendent dupa medie</a>
+    <a class="add" onclick="SortDescGrades()">Sorteaza descendent dupa medie</a>
     <p id="noStudents">Nici un elev adaugat.</p>
-
+    <div id="students"></div>
   </div>
   <div id="note_elev_wrapper">
     <a class="add" onclick="hideStudentGrades()">Ascunde Notele</a> <br>

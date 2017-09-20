@@ -17,7 +17,7 @@ function findPositionInArray(array, value) {
   }
 }
 
-//Ordonare Vector BubbleSort
+//Ordonare Crescatoare BubbleSort
 function sortAscBubble(array) {
   var aux;
   for (i = 1; i < array.length; i++) {
