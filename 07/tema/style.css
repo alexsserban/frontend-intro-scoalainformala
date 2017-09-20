@@ -6,22 +6,26 @@ body{
 #lista_elevi_wrapper{
   padding: 20px;
   width: 100%;
-  background: green;
+  height: 100%;
+  height: 100vh;
+  background: #D5CEC1;
 }
 
 #note_elev_wrapper{
   padding: 20px;
   display: none;
-  background: deepskyblue;
+  background: #D7B8A6;
   width: 50%;
+  height: 100vh;
 }
 
-.add{
+.button{
   padding: 5px;
-  background: orange;
+  background: #7B828E;
+  color: white;
 }
 
-#no-name{
+#noStudents{
   font-size: 20px;
 }
 

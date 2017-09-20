@@ -13,25 +13,25 @@
     <form>
       <label>Nume:</label>
       <input id="newStudent" type="text" onkeypress="keypress(event)">
-      <a class="add" onclick="addStudent()">Adauga Elev</a>
+      <a class="button" onclick="addStudent()">Adauga Elev</a>
     </form>
     <p id="invalidName"></p>
-    <a class="add" onclick="SortAscGrades()">Sorteaza ascendent dupa medie</a>
-    <a class="add" onclick="SortDescGrades()">Sorteaza descendent dupa medie</a>
+    <a class="button" onclick="sortAscStudents()">Sorteaza ascendent dupa medie</a>
+    <a class="button" onclick="sortDescStudents()">Sorteaza descendent dupa medie</a>
     <p id="noStudents">Nici un elev adaugat.</p>
     <div id="students"></div>
   </div>
   <div id="note_elev_wrapper">
-    <a class="add" onclick="hideStudentGrades()">Ascunde Notele</a> <br>
+    <a class="button" onclick="hideStudentGrades()">Ascunde Notele</a> <br>
     <h1 id="currentStudent"></h1>
     <form>
       <label>Nota:</label>
       <input id="newGrade" type="text" onkeypress="keypress(event)">
-      <a class="add" onclick="addGrade()">Adauga Nota</a>
+      <a class="button" onclick="addGrade()">Adauga Nota</a>
     </form>
     <p id="invalidGrade"></p>
-    <a class="add">Sorteaza ascendent notele</a>
-    <a class="add">Sorteaza descendent notele</a>
+    <a class="button" onclick="sortAscGrades()">Sorteaza ascendent notele</a>
+    <a class="button" onclick="sortDescGrades()">Sorteaza descendent notele</a>
     <div id="grades"></div>
   </div>
   <script src="script.js"></script>
