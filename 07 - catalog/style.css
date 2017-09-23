@@ -1,0 +1,18 @@
+body{
+  padding: 20px;
+}
+
+.button{
+  padding: 10px;
+  background: green;
+  color: white;
+}
+
+input{
+  width: 50px;
+  margin-right: 20px;
+}
+
+#name{
+  width: 150px;
+}

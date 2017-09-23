@@ -1,0 +1,36 @@
+p{
+  margin: 0;
+}
+
+#map{
+  width: 300px;
+  height: 300px;
+}
+
+#vremeContainer{
+  display: none;
+}
+
+#vreme{
+  float: left;
+  margin-right: 50px;
+}
+
+#form{
+  margin-bottom: 50px;
+}
+
+#prognoza{
+  display: flex;
+}
+#prognozaContainer{
+  margin-left: 50px;
+}
+
+#container{
+  display: flex;
+}
+
+.prognoze{
+  padding: 5px;
+}

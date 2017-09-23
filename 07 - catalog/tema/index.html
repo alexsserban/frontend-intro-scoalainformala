@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="lista_elevi_wrapper">
+    <h1>Lista Elevi</h1>
+    <form onkeypress="return event.keyCode != 13">
+      <label>Nume:</label>
+      <input id="newStudent" type="text" onkeypress="keypress(event)">
+      <a class="button" onclick="addStudent()">Adauga Elev</a>
+    </form>
+    <p id="invalidName"></p>
+    <a class="button" onclick="sortAscStudents()">Sorteaza ascendent dupa medie</a>
+    <a class="button" onclick="sortDescStudents()">Sorteaza descendent dupa medie</a>
+    <p id="noStudents">Nici un elev adaugat.</p>
+    <div id="students"></div>
+  </div>
+  <div id="note_elev_wrapper">
+    <a class="button" onclick="hideStudentGrades()">Ascunde Notele</a> <br>
+    <h1 id="currentStudent"></h1>
+    <form onkeypress="return event.keyCode != 13">
+      <label>Nota:</label>
+      <input id="newGrade" type="text" onkeypress="keypress2(event)">
+      <a class="button" onclick="addGrade()">Adauga Nota</a>
+    </form>
+    <p id="invalidGrade"></p>
+    <a class="button" onclick="sortAscGrades()">Sorteaza ascendent notele</a>
+    <a class="button" onclick="sortDescGrades()">Sorteaza descendent notele</a>
+    <div id="grades"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
