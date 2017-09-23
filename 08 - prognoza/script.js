@@ -32,8 +32,7 @@ function arataVreme() {
 }
 
 function afisareVreme(json) {
-  var vremeImg = HTMLvremeImg.replace('%data%', URL_WEATHER_ICON_PREFIX + json.weather[0].icon +
-    '.png');
+  var vremeImg = HTMLvremeImg.replace('%data%', URL_WEATHER_ICON_PREFIX + json.weather[0].icon + '.png');
   var vremeDescriere = HTMLvremeDescriere.replace('%data%', json.weather[0].description);
   var vremeUmiditate = HTMLvremeUmiditate.replace('%data%', json.main.humidity);
   var vremePresiune = HTMLvremePresiune.replace('%data%', json.main.pressure);
@@ -75,7 +74,6 @@ function displayMap(lat, lon) {
 
 function arataPrognoza() {
   var location = document.getElementById('location').value;
-
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -140,6 +138,7 @@ function afisarePrognoza(json) {
   }
 }
 
+//Creeare obiect
 function createObj(date, description, icon, temperature, time) {
   var obj = {
     date: date,
@@ -151,20 +150,15 @@ function createObj(date, description, icon, temperature, time) {
   return obj;
 }
 
+//Data
 function getDateFromText(text) {
-  var year = text.substr(0, 4);
-  var month = text.substr(5, 2);
-  var date = text.substr(8, 2);
-  return new Date(year, month, date);
-}
-
-function getDateFromText2(text) {
   var year = text.substr(0, 4);
   var month = text.substr(5, 2);
   var date = text.substr(8, 2);
   return date + '/' + month + '/' + year;
 }
 
+//Ora
 function getTimeFromText(text) {
   return text.substr(11);
 }
