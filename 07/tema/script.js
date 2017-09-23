@@ -189,10 +189,15 @@ function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
-//Folosire 'Enter' pentru trimitere entry nou formular
+//'Enter' pentru trimitere entry nou formular
 function keypress(event) {
-  console.log('event_key', event.keyCode);
   if (event.keyCode == 13) {
     addStudent();
+  }
+}
+
+function keypress2(event) {
+  if (event.keyCode == 13) {
+    addGrade();
   }
 }
