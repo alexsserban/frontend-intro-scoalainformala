@@ -1,0 +1,43 @@
+body{
+  background-color: #D0BCFE;
+}
+
+#bigContainer{
+  width: 60vw;
+  margin: auto;
+  border-radius: 20px;
+  background-color: white;
+}
+
+#container{
+  padding-top: 60px;
+  width: 40%;
+  margin: auto;
+}
+
+#input{
+  width: 70%;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+#button{
+  width:30%;
+  background-color: #71FD95;
+}
+
+#form{
+  display: flex;
+}
+
+#wrapper{
+  display: flex;
+}
+
+#items{
+  max-width: 50%;
+}
+
+#buttons{
+  max-width: 50%;
+}
