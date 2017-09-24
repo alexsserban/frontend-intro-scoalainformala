@@ -94,7 +94,7 @@ function afisarePrognoza(json) {
 
   //Creare vector obiecte
   for (i = 0; i < json.list.length; i++) {
-    var date = getDateFromText2(json.list[i].dt_txt);
+    var date = getDateFromText(json.list[i].dt_txt);
     var description = json.list[i].weather[0].description;
     var icon = json.list[i].weather[0].icon;
     var temperature = json.list[i].main.temp;
