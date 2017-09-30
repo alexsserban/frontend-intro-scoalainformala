@@ -7,6 +7,7 @@ body{
   margin: auto;
   border-radius: 20px;
   background-color: white;
+  padding: 30px;
 }
 
 #container{
@@ -35,9 +36,19 @@ body{
 }
 
 #items{
-  max-width: 50%;
+  width: 50%;
 }
 
 #buttons{
-  max-width: 50%;
+  width: 50%;
+  display: block;
+}
+
+#sortButtons{
+  padding-top: 20px;
+}
+
+.sButtons{
+  background-color: #D0BCFE;
+  margin-right: 10px;
 }
