@@ -5,14 +5,38 @@ var htmlText = '<div class="col col2"><h2>%name%</h2><p class="ingrediente">%dat
 var htmlButton = '<div class="col col3"><a href="./detalii.html?id=%data%"><button class="redButton button">Detalii</button></a></div>';
 var htmlDiv = '<div class="rand"></div>';
 
+class MenuItem {
+  constructor (key, nume, imagine, ingrediente) {
+    this.key = key;
+    this.nume = nume;
+    this.imagine = imagine;
+    this.ingrediente = ingrediente;
+  }
+}
+
 //Obtinere JSON meniu
-function getJson() {
+function getJson(callback) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       var res = this.responseText;
       var json = JSON.parse(res);
-      afisareMeniu(json.menu);
+
+      var menu = [];
+      var keys = Object.keys(json.menu);
+      for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+        var item = json.menu[key];
+        menu.push(new MenuItem(key, item.nume, item.imagine, item.ingrediente));
+      }
+
+      console.log(menu);
+
+      if (callback) {
+        callback(menu);
+      }
+
+      //afisareMeniu(json.menu);
     }
   };
 
@@ -26,14 +50,13 @@ function afisareMeniu(menu) {
   var query = form.value;
   form.value = '';
   document.getElementById('wrapper').innerHTML = '';
-  console.log(menu);
-  console.log(menu.length);
+  console.log('l', menu.length);
   for (var i = 0; i < menu.length; i++) {
     if (query == '' || menu[i].ingrediente.search(query) != -1) {
       var imagine = htmlImagine.replace('%data%', menu[i].imagine);
       var text = htmlText.replace('%data%', menu[i].ingrediente);
       text = text.replace('%name%', menu[i].nume);
-      var button = htmlButton.replace('%data%', i);
+      var button = htmlButton.replace('%data%', menu[i].key);
       document.getElementById('wrapper').innerHTML += htmlDiv;
       var currentDiv = document.getElementById('wrapper').lastChild;
       currentDiv.innerHTML = imagine + text + button;
