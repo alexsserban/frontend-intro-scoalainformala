@@ -1,0 +1,81 @@
+body{
+  background-color: #C6F2ED;
+}
+
+h2{
+  padding: 0 40px 0 40px;
+}
+
+#container{
+  width: 60%;
+  margin: 0 auto;
+}
+
+#title{
+  float: left;
+}
+
+.button{
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 30px;
+  float:right;
+  color: white;
+  background-color: #6D98F1;
+}
+
+#pinkButton{
+  background-color: #B6A9D7;
+  float: none;
+}
+
+.redButton{
+  margin-right: 10px;
+  background-color: #D14F64;
+}
+
+#search{
+  clear: both;
+}
+
+#input{
+  width: 30%;
+  height: 35px;
+}
+
+#wrapper{
+  clear: both;
+  margin-top: 50px;
+}
+
+.imagine{
+  width: 100%;
+}
+
+.ingrediente{
+  padding: 0 40px 0 40px;
+  font-size: 18px;
+}
+
+.rand{
+  clear: both;
+  margin-bottom: 30px;
+  display: inline-block;
+  width: 100%;
+}
+
+.col{
+  float: left;
+}
+.col1{
+  max-width: 20%;
+}
+.col2{
+  max-width: 70%;
+  min-width: 70%;
+}
+.col3{
+  max-width: 10%;
+}
