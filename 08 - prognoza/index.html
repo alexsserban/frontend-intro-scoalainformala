@@ -10,26 +10,26 @@
 </head>
 
 <body>
-  <div id="form">
-    <input autofocus id="location" type="text">
-    <button id="afisareVreme" onclick="arataVreme()">Afiseaza Vremea</button>
-    <button id="afisarePrognoza" onclick="arataPrognoza()">Afiseaza Prognoza</button>
-  </div>
-  <div id="container">
-    <div id="vremeContainer">
-      <div id="vreme"></div>
-      <div id="map"></div>
+  <div id="wrapper">
+    <div id="form" class="block">
+      <input autofocus id="location" type="text" onkeypress="submitFromEnter(event)">
+      <button id="afisareVreme" class="button" onclick="arataVreme()">Afiseaza Vremea</button>
+      <button id="afisarePrognoza" class="button" onclick="arataPrognoza()">Afiseaza Prognoza</button>
     </div>
-    <div id="prognozaContainer">
-      <div id="prognozaTitle"></div>
-      <div id="prognoza"></div>
-    </div>
+      <div id="vremeContainer" class="block">
+        <div id="titleVreme"></div>
+        <div id="vreme"></div>
+        <div id="map"></div>
+      </div>
+      <div id="prognozaContainer" class="block">
+        <div id="prognozaTitle"></div>
+        <div id="prognoza"></div>
+      </div>
   </div>
   <script src="script.js"></script>
-
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvGnYWxhLdoe2MsDhM79E70W5oE6PWvfA&callback=initMap">
-    </script>
+  </script>
 </body>
 
 </html>

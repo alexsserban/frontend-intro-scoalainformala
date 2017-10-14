@@ -12,7 +12,7 @@
     <h1>Lista Elevi</h1>
     <form onkeypress="return event.keyCode != 13">
       <label>Nume:</label>
-      <input id="newStudent" type="text" onkeypress="keypress(event)">
+      <input id="newStudent" type="text" onkeypress="studentFormEnter(event)">
       <a class="button" onclick="addStudent()">Adauga Elev</a>
     </form>
     <p id="invalidName"></p>
@@ -26,7 +26,7 @@
     <h1 id="currentStudent"></h1>
     <form onkeypress="return event.keyCode != 13">
       <label>Nota:</label>
-      <input id="newGrade" type="text" onkeypress="keypress2(event)">
+      <input id="newGrade" type="text" onkeypress="gradeFormEnter(event)">
       <a class="button" onclick="addGrade()">Adauga Nota</a>
     </form>
     <p id="invalidGrade"></p>

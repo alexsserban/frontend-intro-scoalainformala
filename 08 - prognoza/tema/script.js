@@ -6,6 +6,7 @@ var htmlItemButton = '<p><button class="item%data%" onclick="buttonAction(this.c
 var htmlItemName = '<p class="item%data%">%data%</p>';
 var items = [];
 
+//Adaugare Item in Lista
 function addItem() {
   var input = document.getElementById('input');
   var errorMessage = document.getElementById('errorMessage');
@@ -22,15 +23,16 @@ function addItem() {
     }
 
     items.push(createObj(input.value, 0));
-
     var itemName = htmlItemName.replace('%data%', items.length - 1);
     itemName = itemName.replace('%data%', input.value);
     var itemButton = htmlItemButton.replace('%data%', items.length - 1);
     document.getElementById('items').innerHTML += itemName;
     document.getElementById('buttons').innerHTML += itemButton;
+    input.value = '';
   }
 }
 
+//Creare obiect
 function createObj(value, line) {
   var obj = {
     value: value,
@@ -39,6 +41,7 @@ function createObj(value, line) {
   return obj;
 }
 
+//Verificare Item existent
 function isAlreadyItem(item) {
   for (var i = 0; i < items.length; i++) {
     if (item == items[i].value) return 1;
@@ -47,6 +50,7 @@ function isAlreadyItem(item) {
   return 0;
 }
 
+//Taiere Item din Lista
 function buttonAction(id) {
   document.getElementsByClassName(id)[0].style.textDecoration =  'line-through';
   index = id.substr(4);
@@ -54,6 +58,7 @@ function buttonAction(id) {
   items[index].line = 1;
 }
 
+//Sortare Ascendenta
 function sortAsc() {
   var aux;
   for (i = 1; i < items.length; i++) {
@@ -69,6 +74,7 @@ function sortAsc() {
   displaySortItems();
 }
 
+//Sortare Descendenta
 function sortDesc() {
   var aux;
   for (i = 1; i < items.length; i++) {
@@ -84,6 +90,7 @@ function sortDesc() {
   displaySortItems();
 }
 
+//Afisare
 function displaySortItems() {
   document.getElementById('items').innerHTML = htmlItemDesc;
   for (var i = 0; i < items.length; i++) {
@@ -94,5 +101,12 @@ function displaySortItems() {
       var id = 'item' + i;
       buttonAction(id);
     }
+  }
+}
+
+//'Enter' pentru adaugare elev nou
+function itemFormEnter(event) {
+  if (event.keyCode == 13) {
+    addItem();
   }
 }

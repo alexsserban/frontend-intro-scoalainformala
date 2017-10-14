@@ -12,7 +12,7 @@
     <div id="container">
       <h1>SHOPPING LIST</h1>
       <div id="form">
-        <input autofocus id="input" type="text">
+        <input autofocus id="input" type="text" onkeypress="itemFormEnter(event)">
         <button id="button" onclick="addItem()">Add item</button>
       </div>
       <p id="errorMessage"></p>

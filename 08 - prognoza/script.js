@@ -1,9 +1,7 @@
-var URL_CURRENT_WEATHER =
-  'https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=';
-var URL_FORECAST_WEATHER =
-  'https://api.openweathermap.org/data/2.5/forecast?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=';
-var URL_WEATHER_ICON_PREFIX = 'http://openweathermap.org/img/w/'; // sufix .png
-var HTMLvremeTitle = '<h2 class="vremeTitle">Vremea acum:</h2>';
+var URL_CURRENT_WEATHER = 'https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=';
+var URL_FORECAST_WEATHER = 'https://api.openweathermap.org/data/2.5/forecast?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=';
+var URL_WEATHER_ICON_PREFIX = 'http://openweathermap.org/img/w/';
+var HTMLvremeTitle = '<h2 class="vremeTitle">Vremea acum</h2><hr>';
 var HTMLvremeImg = '<img class="vremeImg" src="%data%"> <br>';
 var HTMLvremeDescriere = '<p class="vremeDescriere">Descriere: %data%</p>';
 var HTMLvremeUmiditate = '<p class="vremeUmiditate">Umiditate: %data%</p>';
@@ -13,10 +11,10 @@ var HTMLvremeMin = '<p class="vremeMin">Minima zilei: %data%</p>';
 var HTMLvremeMax = '<p class="vremeMax">Maxima zilei: %data%</p>';
 var HTMLvremeZiua = '<p class="vremeZiua"><strong>Ziua: %data%</strong></p>';
 var HTMLvremeOra = '<p class="vremeOra">Ora: %data%</p>';
-var HTMLprognozaTitle = '<h2 class="prognozaTitle">Vremea in urmatoarele zile:</h2>';
+var HTMLprognozaTitle = '<h2 class="prognozaTitle">Vremea in urmatoarele zile</h2><hr>';
 
+//JSON Vreme
 function arataVreme() {
-  document.getElementById('vremeContainer').style.display = 'initial';
   var location = document.getElementById('location').value;
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -31,7 +29,9 @@ function arataVreme() {
   xhttp.send();
 }
 
+//Afisare Vreme
 function afisareVreme(json) {
+  document.getElementById('map').style.display = 'inherit';
   var vremeImg = HTMLvremeImg.replace('%data%', URL_WEATHER_ICON_PREFIX + json.weather[0].icon + '.png');
   var vremeDescriere = HTMLvremeDescriere.replace('%data%', json.weather[0].description);
   var vremeUmiditate = HTMLvremeUmiditate.replace('%data%', json.main.humidity);
@@ -40,10 +40,10 @@ function afisareVreme(json) {
   var vremeMin = HTMLvremeMin.replace('%data%', json.main.temp_min);
   var vremeMax = HTMLvremeMax.replace('%data%', json.main.temp_max);
 
-  document.getElementById('vreme').innerHTML = HTMLvremeTitle + vremeImg + vremeDescriere +
+  document.getElementById('titleVreme').innerHTML = HTMLvremeTitle;
+  document.getElementById('vreme').innerHTML = vremeImg + vremeDescriere +
     vremeUmiditate + vremePresiune + vremeTemperatura + vremeMin + vremeMax;
 
-  //displayMap(json.coord.lat, json.coord.lon);
   var uluru = {
     lat: json.coord.lat,
     lng: json.coord.lon,
@@ -51,6 +51,7 @@ function afisareVreme(json) {
   initMap(uluru);
 }
 
+//Initializare harta
 function initMap(uluru) {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 11,
@@ -62,6 +63,7 @@ function initMap(uluru) {
   });
 }
 
+//Afisare Harta
 function displayMap(lat, lon) {
   var mapOptions = {
     center: new google.maps.LatLng(lat, lon),
@@ -72,6 +74,7 @@ function displayMap(lat, lon) {
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 }
 
+//JSON Prognoza
 function arataPrognoza() {
   var location = document.getElementById('location').value;
   var xhttp = new XMLHttpRequest();
@@ -86,6 +89,7 @@ function arataPrognoza() {
   xhttp.open('GET', URL_FORECAST_WEATHER + location, true);
   xhttp.send();
 }
+
 
 function afisarePrognoza(json) {
   var rawForecast = [];
@@ -103,7 +107,7 @@ function afisarePrognoza(json) {
     rawForecast.push(obj);
   }
 
-  //Sortare vector in functie de datavar forecast = [];
+  //Sortare vector
   var forecast = [];
   i = 0;
   forecast[i] = [];
@@ -161,4 +165,11 @@ function getDateFromText(text) {
 //Ora
 function getTimeFromText(text) {
   return text.substr(11);
+}
+
+//'Enter' pentru afisare vreme
+function submitFromEnter(event) {
+  if (event.keyCode == 13) {
+    arataVreme();
+  }
 }

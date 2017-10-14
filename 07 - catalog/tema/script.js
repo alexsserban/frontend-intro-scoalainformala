@@ -1,8 +1,6 @@
 var students = [];
-var HTMLstudentsFirstRow =
-  '<div id="first-row"class="studentRow"><p class="column">Nume</p><p class="column">Medie</p></div>';
-var HTMLnewStudent =
-  '<div class="studentRow"><p class="column">%name%</p><p id="%id%" class="column">%average%</p><p class="column"><a class="button" onclick="showStudentGrades(%id%)">%button%</a></p></div>';
+var HTMLstudentsFirstRow = '<div id="first-row"class="studentRow"><p class="column">Nume</p><p class="column">Medie</p></div>';
+var HTMLnewStudent = '<div class="studentRow"><p class="column">%name%</p><p id="%id%" class="column">%average%</p><p class="column"><a class="button" onclick="showStudentGrades(%id%)">%button%</a></p></div>';
 var HTMLcurrentStudent = 'Note Elev: %data%';
 var HTMLnewGrade = '<div class="studentGrades">%data%</div>';
 var HTMLnoGrades = '<p class="noEntryes">Nicio nota adaugata.</p>';
@@ -10,7 +8,9 @@ var id = 0;
 
 //Adaugare Student din formular
 function addStudent() {
-  var studentName = document.getElementById('newStudent').value;
+  var formStudentName = document.getElementById('newStudent');
+  var studentName = formStudentName.value;
+  formStudentName.value = '';
   var nameError = document.getElementById('invalidName');
   if (!studentName) {
     nameError.innerHTML = 'Eroare: Nu ai adaugat niciun nume !';
@@ -86,7 +86,9 @@ function hideStudentGrades() {
 
 //Adaugare Note din formular
 function addGrade() {
-  var studentGrade = document.getElementById('newGrade').value;
+  var formStudentGrade = document.getElementById('newGrade');
+  var studentGrade = formStudentGrade.value;
+  formStudentGrade.value = '';
   var gradeError = document.getElementById('invalidGrade');
   if (studentGrade >= 1 && studentGrade <= 10) {
     gradeError.innerHTML = '';
@@ -176,7 +178,7 @@ function sortDescStudents() {
   writeStudentsList();
 }
 
-////Afisare Studenti Ordonati
+//Afisare Studenti Ordonati
 function writeStudentsList() {
   document.getElementById('students').innerHTML = '';
   for (var i = 0; i < students.length; i++) {
@@ -189,14 +191,15 @@ function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
-//'Enter' pentru trimitere entry nou formular
-function keypress(event) {
+//'Enter' pentru adaugare elev nou
+function studentFormEnter(event) {
   if (event.keyCode == 13) {
     addStudent();
   }
 }
 
-function keypress2(event) {
+//'Enter' pentru adaugare nota elev
+function gradeFormEnter(event) {
   if (event.keyCode == 13) {
     addGrade();
   }

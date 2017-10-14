@@ -2,13 +2,51 @@ p{
   margin: 0;
 }
 
-#map{
-  width: 300px;
-  height: 300px;
+body {
+  background-color: #E6F2FC;
+  margin-top: 30px;
 }
 
-#vremeContainer{
+#wrapper{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.block{
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+hr{
+  min-width: 100%;
+}
+
+#title{
+  min-width: 100%;
+}
+
+#location{
+  padding: 10px;
+  width: 70%;
+}
+
+.button{
+  width: calc(15% - 45px);
+  height: 37px;
+  margin: 10px;
+  margin-top: 0;
+  padding: 0;
+  background-color: #3D89DE;
+  color: white;
+  border: none;
+}
+
+#map{
   display: none;
+  width: 900px;
+  height: 250px;
+  margin-left:auto; margin-right:0;
 }
 
 #vreme{
@@ -20,17 +58,21 @@ p{
   margin-bottom: 50px;
 }
 
-#prognoza{
-  display: flex;
-}
-#prognozaContainer{
-  margin-left: 50px;
-}
-
-#container{
-  display: flex;
+#vremeContainer{
+  margin-bottom: 50px;
 }
 
 .prognoze{
+  float: left;
   padding: 5px;
+}
+
+#prognozaContainer{
+  width: 100%;
+  display: inline-block;
+}
+
+.vremeZiua{
+  padding: 5px;
+  background-color: #BBDEFB;
 }
