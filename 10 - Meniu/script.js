@@ -12,8 +12,6 @@ function getJson() {
     if (this.readyState == 4 && this.status == 200) {
       var res = this.responseText;
       var json = JSON.parse(res);
-
-      console.log(json.menu);
       afisareMeniu(json.menu);
     }
   };
@@ -26,8 +24,10 @@ function getJson() {
 function afisareMeniu(menu) {
   var form = document.getElementById('input');
   var query = form.value;
-  form. value = '';
+  form.value = '';
   document.getElementById('wrapper').innerHTML = '';
+  console.log(menu);
+  console.log(menu.length);
   for (var i = 0; i < menu.length; i++) {
     if (query == '' || menu[i].ingrediente.search(query) != -1) {
       var imagine = htmlImagine.replace('%data%', menu[i].imagine);
